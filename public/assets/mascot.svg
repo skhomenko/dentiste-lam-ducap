@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 360 380" fill="none">
+  <!-- An original vector interpretation of the clinic's sign character. -->
+  <g stroke="#563d58" stroke-width="4.5" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M105 112C93 78 111 45 139 47c18 1 34 17 53 15 20-2 40-17 59-7 31 16 31 55 18 94-10 30-13 59-18 85-5 29-19 70-35 68-15-2-17-33-23-56-4-17-11-34-20-34-11 0-11 20-14 41-4 29-3 53-18 55-23 3-35-48-42-80-8-37-9-77 6-116Z" fill="#fffaf0"/>
+    <path d="M157 67c11 9 23 10 34 8" stroke="#d7c4d4" stroke-width="3"/>
+    <path d="M136 110c8-10 19-8 26 1m-24-1 15 4"/>
+    <ellipse cx="220" cy="108" rx="18" ry="26" fill="#fffaf0" transform="rotate(14 220 108)"/>
+    <ellipse cx="214" cy="115" rx="7" ry="12" fill="#563d58" stroke="none" transform="rotate(14 214 115)"/>
+    <path d="M201 72c10-9 22-6 28 1M130 144c24 34 62 39 91 8m-96-16 4 13m89-2 9 9"/>
+    <path d="M249 164c10-15 18-29 27-25 6 2 6 8 3 13 11-11 28-11 37-5 9 6 11 15 7 18-5 4-10-5-17-5h-12c12 3 25 8 22 15-3 7-14-1-27-1-2 14-10 23-22 21-10-2-19-17-18-31Z" fill="#fffaf0"/>
+    <circle cx="273" cy="163" r="12" fill="#fffaf0"/>
+    <path d="m65 55 51 261" stroke="#fffaf0" stroke-width="12"/>
+    <path d="m65 55 51 261" stroke-width="3"/>
+    <path d="m60 30 13 66-22 4-13-66Z" fill="#fffaf0"/>
+    <path d="m45 43 15-3m-12 14 15-3m-12 14 14-3m-11 14 13-3m-11 14 14-3" stroke-width="2.5"/>
+    <path d="M103 153c-2-10-13-16-19-11-5 3 0 9-1 13-8-6-18-3-18 4 0 4 4 7 8 10-10 0-11 8-6 13 5 5 15 10 24 7 12-4 16-23 12-36Z" fill="#fffaf0"/>
+  </g>
+  <g stroke="#d5bcd1" stroke-width="2" stroke-linecap="round">
+    <path d="m292 63 7-12m8 34 15-3M53 233l-13 6m24 16-6 11"/>
+  </g>
+  <ellipse cx="181" cy="341" rx="80" ry="4" fill="#38233d" opacity=".13"/>
+</svg>
