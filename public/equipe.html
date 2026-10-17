@@ -8,6 +8,9 @@
   <meta name="theme-color" content="#563d58">
   <meta name="referrer" content="no-referrer">
   <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+  <link rel="preload" href="assets/fonts/manrope-latin-variable.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="assets/fonts/dm-serif-display-latin-regular.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="assets/fonts/dm-serif-display-latin-italic.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="stylesheet" href="assets/styles.css">
   <script type="application/ld+json">{
   "@context": "https://schema.org",
@@ -40,8 +43,8 @@
   <a class="skip" href="#main">Aller au contenu</a>
   <header class="header wrap">
     <a class="brand" href="index.html" aria-label="Dentiste Lam-Ducap, accueil">
-      <span class="brand-small">DENTISTE</span>
-      <span class="brand-name">LAM-DUCAP</span>
+      <img class="brand-mascot" src="assets/brand-mark.svg" width="64" height="64" alt="" aria-hidden="true">
+      <span class="brand-wordmark"><span class="brand-small">DENTISTE</span><span class="brand-name">LAM-DUCAP</span></span>
     </a>
     <nav class="navigation" aria-label="Navigation principale">
       <a class="nav-team" href="equipe.html" aria-current="page">Notre équipe</a>
@@ -57,7 +60,6 @@
         <h1 id="team-title">Votre équipe<br><em>à Châteauguay.</em></h1>
         <p class="intro">Diane Du Cap et Tuan Lam vous accueillent au 16, boulevard d’Anjou.</p>
       </div>
-      <div class="team-emblem" aria-hidden="true"><img src="assets/mascot.svg" width="360" height="380" alt=""></div>
     </section>
     <section class="team-list" aria-label="Les dentistes">
       <div class="team-member"><h2>Diane <em>Du Cap</em></h2><p>Dentiste</p></div>
@@ -68,10 +70,12 @@
       <a class="button" href="index.html#contact">Nous joindre<span aria-hidden="true">→</span></a>
     </div>
   </main>
-  <footer class="footer wrap">
+  <footer class="footer">
+    <div class="footer-inner wrap">
     <p class="footer-brand">Dentiste Lam-Ducap</p>
     <p>Diane Du Cap et Tuan Lam · Dentistes</p>
     <a href="team.html" lang="en" hreflang="en-CA">English</a>
+    </div>
   </footer>
 </body>
 </html>
