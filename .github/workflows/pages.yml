@@ -1,0 +1,53 @@
+name: Deploy preview to GitHub Pages
+
+# Publishes public/ as a review preview for the clinic owners. The preview is
+# marked noindex so search engines do not list it ahead of the final domain.
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: pages
+  cancel-in-progress: false
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          persist-credentials: false
+
+      - name: Prepare preview site
+        run: |
+          cp -R public _site
+          # Preview only: ask search engines not to index the github.io copy.
+          for page in _site/*.html; do
+            grep -q 'name="robots"' "$page" || \
+              sed -i 's|<meta charset="utf-8">|<meta charset="utf-8">\n  <meta name="robots" content="noindex">|' "$page"
+          done
+          # 404.html uses root-relative paths, and Pages serves this project
+          # under /<repository>/, so prefix them for the preview.
+          sed -i "s|=\"/|=\"/${GITHUB_REPOSITORY#*/}/|g" _site/404.html
+
+      - uses: actions/upload-pages-artifact@fc324d3547104276b827a68afc52ff2a11cc49c9 # v5.0.0
+        with:
+          path: _site/
+
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    permissions:
+      pages: write
+      id-token: write
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - id: deployment
+        uses: actions/deploy-pages@368f82528645a54fb793d4d04e342629a3f51346 # v5.0.1
