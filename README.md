@@ -30,7 +30,7 @@ Keep changes to facts, links, and structured data consistent across all four lan
 
 ## Publication status
 
-Local review version only; not deployed. Any future static host must publish **only `public/`**, never the repository root. The private `.local/` folder is excluded from Git and must stay outside published output.
+Not launched. A review preview for the clinic owners is published to GitHub Pages at https://skhomenko.github.io/dentiste-lam-ducap/ by `.github/workflows/pages.yml` on every push to `main`. The workflow publishes only `public/`, marks every page `noindex`, and prefixes the 404 page's root-relative paths for the project subpath. The final host is not chosen yet; remove the preview when it is. Any future static host must publish **only `public/`**, never the repository root. The private `.local/` folder is excluded from Git and must stay outside published output.
 
 Before launch, obtain approval for the text and character artwork, confirm the public practice name, address and phone number, and supply any desired opening hours and actual office email. Missing details are intentionally omitted. After choosing the real domain, add absolute canonical/language-alternate URLs, sharing metadata and a sitemap, and review the selected host’s HTTPS and security header configuration.
 
