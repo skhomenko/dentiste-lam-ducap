@@ -96,9 +96,9 @@ h1 em, h2 em { color: var(--plum); }
 .brand:hover .brand-wordmark, .brand:focus-visible .brand-wordmark { color: var(--plum); }
 .navigation { display: flex; flex-wrap: wrap; align-items: center; gap: 24px; font-size: .9375rem; }
 .navigation a { display: inline-flex; align-items: center; min-height: 44px; min-width: 44px; }
-.nav-contact, .nav-phone, .nav-team { text-decoration-line: underline; text-decoration-color: transparent; }
-.nav-contact:hover, .nav-phone:hover, .nav-team:hover,
-.nav-contact:focus-visible, .nav-phone:focus-visible, .nav-team:focus-visible,
+.nav-phone, .nav-team { text-decoration-line: underline; text-decoration-color: transparent; }
+.nav-phone:hover, .nav-team:hover,
+.nav-phone:focus-visible, .nav-team:focus-visible,
 .nav-team[aria-current='page'] { text-decoration-color: currentColor; }
 .nav-phone { gap: 9px; }
 .language { border-left: 1px solid var(--line); padding-left: 24px; }
@@ -115,7 +115,7 @@ h1 em, h2 em { color: var(--plum); }
 .button { display: inline-flex; gap: 12px; justify-content: center; align-items: center; min-height: 52px; padding: 12px 18px; border: 1px solid var(--plum); border-radius: 4px; color: var(--plum); text-decoration: none; font-size: 1.125rem; font-weight: 600; }
 .button:hover { background: var(--lilac); color: var(--plum-dark); }
 .text-link { display: inline-flex; gap: 12px; align-items: center; font-size: 1rem; min-height: 44px; }
-.contact { grid-area: contact; border-top: 1px solid var(--line); padding-block: 44px 52px; display: grid; grid-template-columns: 1fr 1fr; gap: 64px; }
+.contact { grid-area: contact; border-top: 1px solid var(--line); padding-block: 44px 52px; display: grid; grid-template-columns: repeat(3, 1fr); gap: 64px; }
 .contact .eyebrow { margin-bottom: 16px; }
 .call { display: inline-flex; align-items: center; gap: 10px; min-height: 44px; font-family: var(--serif); font-size: clamp(1.75rem, 3vw, 2.5rem); letter-spacing: -.025em; line-height: 1.4; }
 .call .icon, .call-verb { position: absolute; width: 1px; height: 1px; margin: -1px; overflow: hidden; clip-path: inset(50%); white-space: nowrap; }
@@ -125,7 +125,11 @@ h1 em, h2 em { color: var(--plum); }
 address { font-style: normal; }
 address span { display: block; }
 .address-row + .text-link { margin-top: 20px; }
-.contact-address { padding-left: 44px; border-left: 1px solid var(--line); }
+.contact-address, .contact-hours { padding-left: 44px; border-left: 1px solid var(--line); }
+.hours { max-width: 300px; margin: 0; font-size: 1rem; }
+.hours div { display: flex; justify-content: space-between; gap: 16px; padding-block: 3px; }
+.hours dd { margin: 0; }
+.hours .closed { color: var(--muted); }
 .phone-large { display: inline-block; min-height: 44px; font-family: var(--serif); font-size: clamp(1.75rem, 3vw, 2.5rem); letter-spacing: -.025em; line-height: 1.4; margin-bottom: 14px; }
 .footer { background: var(--plum); color: var(--on-plum-muted); }
 .footer-inner { display: flex; flex-wrap: wrap; gap: 16px 24px; justify-content: space-between; align-items: center; padding-block: 24px; font-size: .875rem; }
@@ -151,10 +155,9 @@ address span { display: block; }
   .wrap { width: calc(100% - 72px); }
   .navigation { gap: 18px; }
   .language { padding-left: 18px; }
-  .nav-contact { display: none !important; }
   .home { column-gap: 32px; }
   .contact { gap: 32px; }
-  .contact-address { padding-left: 30px; }
+  .contact-address, .contact-hours { padding-left: 30px; }
 }
 @media (max-width: 760px) {
   .wrap { width: calc(100% - 40px); }
@@ -180,7 +183,7 @@ address span { display: block; }
   .call .icon, .call-verb { position: static; width: 20px; height: 20px; margin: 0; overflow: visible; clip-path: none; white-space: normal; }
   .call-verb { width: auto; height: auto; }
   .contact-note { font-size: 1rem; margin-top: 10px; }
-  .contact-address { padding: 24px 0 0; border-left: 0; border-top: 1px solid var(--line); }
+  .contact-address, .contact-hours { padding: 24px 0 0; border-left: 0; border-top: 1px solid var(--line); }
   .phone-large { font-size: 2.25rem; }
   .footer-inner { gap: 8px 20px; padding-block: 20px; }
   .footer p:nth-child(2) { flex-basis: 100%; order: 3; }
@@ -192,6 +195,17 @@ address span { display: block; }
   .team-contact { padding-bottom: 32px; }
   .error-main { padding-block: 32px; }
   .error-copy { grid-template-columns: 1fr; gap: 28px; }
+}
+@supports (grid-template-rows: subgrid) {
+  @media (max-width: 760px) {
+    .home { grid-template-areas: none; row-gap: 24px; }
+    .hero-intro { grid-area: 1 / 1; padding-bottom: 0; }
+    .contact { grid-area: 2 / 1 / 6 / 2; grid-template-rows: subgrid; }
+    .contact-phone { grid-row: 1; }
+    .patient-note { grid-area: 3 / 1; margin-bottom: 0; }
+    .contact-address { grid-row: 3; padding-top: 0; border-top: 0; }
+    .contact-hours { grid-row: 4; }
+  }
 }
 @media (max-width: 370px) {
   .wrap { width: calc(100% - 32px); }
@@ -205,7 +219,7 @@ address span { display: block; }
   .button, .call { transition: background-color .2s ease, color .2s ease; }
   .text-link .icon { transition: transform .2s ease; }
   .text-link:hover .icon, .text-link:focus-visible .icon { transform: translateX(3px); }
-  .nav-contact, .nav-phone, .nav-team { transition: text-decoration-color .2s ease; }
+  .nav-phone, .nav-team { transition: text-decoration-color .2s ease; }
   .brand-wordmark { transition: color .2s ease; }
   .hero-intro, .patient-note, .team-heading { animation: rise .6s cubic-bezier(.2, .7, .2, 1) both; }
   .patient-note { animation-delay: .12s; }
