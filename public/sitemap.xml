@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">
+  <url>
+    <loc>https://dentistelam.ca/</loc>
+    <xhtml:link rel="alternate" hreflang="fr-CA" href="https://dentistelam.ca/"/>
+    <xhtml:link rel="alternate" hreflang="en-CA" href="https://dentistelam.ca/index-en.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://dentistelam.ca/"/>
+  </url>
+  <url>
+    <loc>https://dentistelam.ca/index-en.html</loc>
+    <xhtml:link rel="alternate" hreflang="fr-CA" href="https://dentistelam.ca/"/>
+    <xhtml:link rel="alternate" hreflang="en-CA" href="https://dentistelam.ca/index-en.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://dentistelam.ca/"/>
+  </url>
+  <url>
+    <loc>https://dentistelam.ca/equipe.html</loc>
+    <xhtml:link rel="alternate" hreflang="fr-CA" href="https://dentistelam.ca/equipe.html"/>
+    <xhtml:link rel="alternate" hreflang="en-CA" href="https://dentistelam.ca/team.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://dentistelam.ca/equipe.html"/>
+  </url>
+  <url>
+    <loc>https://dentistelam.ca/team.html</loc>
+    <xhtml:link rel="alternate" hreflang="fr-CA" href="https://dentistelam.ca/equipe.html"/>
+    <xhtml:link rel="alternate" hreflang="en-CA" href="https://dentistelam.ca/team.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://dentistelam.ca/equipe.html"/>
+  </url>
+</urlset>

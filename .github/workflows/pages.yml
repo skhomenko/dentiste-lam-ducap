@@ -1,7 +1,8 @@
-name: Deploy preview to GitHub Pages
+name: Deploy site to GitHub Pages
 
-# Publishes public/ as a review preview for the clinic owners. The preview is
-# marked noindex so search engines do not list it ahead of the final domain.
+# Publishes only public/ to GitHub Pages. The custom domain dentistelam.ca is
+# set in the repository's Pages settings, so the site is served from the domain
+# root and the 404 page's root-relative paths work unchanged.
 
 on:
   push:
@@ -23,21 +24,9 @@ jobs:
         with:
           persist-credentials: false
 
-      - name: Prepare preview site
-        run: |
-          cp -R public _site
-          # Preview only: ask search engines not to index the github.io copy.
-          for page in _site/*.html; do
-            grep -q 'name="robots"' "$page" || \
-              sed -i 's|<meta charset="utf-8">|<meta charset="utf-8">\n  <meta name="robots" content="noindex">|' "$page"
-          done
-          # 404.html uses root-relative paths, and Pages serves this project
-          # under /<repository>/, so prefix them for the preview.
-          sed -i "s|=\"/|=\"/${GITHUB_REPOSITORY#*/}/|g" _site/404.html
-
       - uses: actions/upload-pages-artifact@fc324d3547104276b827a68afc52ff2a11cc49c9 # v5.0.0
         with:
-          path: _site/
+          path: public/
 
   deploy:
     needs: build

@@ -3,8 +3,12 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Dentiste Lam-Ducap | Diane Du Cap et Tuan Lam à Châteauguay</title>
-  <meta name="description" content="Diane Du Cap et Tuan Lam vous reçoivent au 16, boulevard d’Anjou, à Châteauguay. 450-699-5623. La clinique reçoit ses patients actuels uniquement.">
+  <title>Dentiste Lam-Ducap | Tuan Lam et Diane Du Cap à Châteauguay</title>
+  <meta name="description" content="Tuan Lam et Diane Du Cap vous reçoivent au 16, boulevard d’Anjou, à Châteauguay. 450-699-5623. La clinique reçoit ses patients actuels uniquement.">
+  <link rel="canonical" href="https://dentistelam.ca/">
+  <link rel="alternate" hreflang="fr-CA" href="https://dentistelam.ca/">
+  <link rel="alternate" hreflang="en-CA" href="https://dentistelam.ca/index-en.html">
+  <link rel="alternate" hreflang="x-default" href="https://dentistelam.ca/">
   <meta name="theme-color" content="#563d58">
   <meta name="referrer" content="no-referrer">
   <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
@@ -15,7 +19,9 @@
   <script type="application/ld+json">{
   "@context": "https://schema.org",
   "@type": "Dentist",
+  "@id": "https://dentistelam.ca/#clinic",
   "name": "Dentiste Lam-Ducap",
+  "url": "https://dentistelam.ca/",
   "telephone": "+1-450-699-5623",
   "address": {
     "@type": "PostalAddress",
@@ -25,15 +31,23 @@
     "postalCode": "J6K 1B7",
     "addressCountry": "CA"
   },
+  "openingHoursSpecification": [
+    {
+      "@type": "OpeningHoursSpecification",
+      "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday"],
+      "opens": "09:00",
+      "closes": "17:00"
+    }
+  ],
   "employee": [
     {
       "@type": "Person",
-      "name": "Diane Du Cap",
+      "name": "Tuan Lam",
       "jobTitle": "Dentiste"
     },
     {
       "@type": "Person",
-      "name": "Tuan Lam",
+      "name": "Diane Du Cap",
       "jobTitle": "Dentiste"
     }
   ]
@@ -55,7 +69,7 @@
     <section class="hero-intro" aria-labelledby="welcome">
       <p class="eyebrow">Votre clinique dentaire</p>
       <h1 id="welcome">Au plaisir de<br>vous <em>retrouver.</em></h1>
-      <p class="dentists">Diane Du Cap &amp; Tuan Lam</p>
+      <p class="dentists">Tuan Lam &amp; Diane Du Cap</p>
     </section>
     <section class="contact" id="contact" aria-label="Nous joindre">
       <div class="contact-phone">
@@ -74,6 +88,18 @@
           </address>
         </div>
         <a class="text-link" href="https://www.google.com/maps/dir/?api=1&amp;destination=16%20Boulevard%20d%27Anjou%2C%20Ch%C3%A2teauguay%2C%20QC%20J6K%201B7" rel="noreferrer">Itinéraire sur Google Maps<svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 18 18 6M6 6h12v12"/></svg></a>
+      </div>
+      <div class="contact-hours">
+        <h2 class="eyebrow">Heures d’ouverture</h2>
+        <dl class="hours">
+          <div><dt>Lundi</dt><dd>9 h à 17 h</dd></div>
+          <div><dt>Mardi</dt><dd>9 h à 17 h</dd></div>
+          <div><dt>Mercredi</dt><dd>9 h à 17 h</dd></div>
+          <div><dt>Jeudi</dt><dd>9 h à 17 h</dd></div>
+          <div class="closed"><dt>Vendredi</dt><dd>Fermé</dd></div>
+          <div class="closed"><dt>Samedi</dt><dd>Fermé</dd></div>
+          <div class="closed"><dt>Dimanche</dt><dd>Fermé</dd></div>
+        </dl>
       </div>
     </section>
     <section class="patient-note" aria-labelledby="patients">
