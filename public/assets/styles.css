@@ -102,7 +102,7 @@ h1 em, h2 em { color: var(--plum); }
 .nav-team[aria-current='page'] { text-decoration-color: currentColor; }
 .nav-phone { gap: 9px; }
 .language { border-left: 1px solid var(--line); padding-left: 24px; }
-.home { display: grid; grid-template-columns: 1.2fr 1fr; grid-template-areas: "intro note" "contact contact"; align-items: center; column-gap: 64px; }
+.home { display: grid; grid-template-columns: 1.2fr 1fr; grid-template-areas: "intro note" "contact contact"; align-content: start; align-items: center; column-gap: 64px; }
 .hero-intro, .patient-note, .contact > div { min-width: 0; }
 .hero-intro { grid-area: intro; padding-block: 48px; }
 .eyebrow { color: var(--plum); font-family: var(--sans); font-size: .75rem; font-weight: 700; line-height: 1.5; letter-spacing: .14em; text-transform: uppercase; margin: 0 0 20px; }
@@ -113,7 +113,7 @@ h1 em, h2 em { color: var(--plum); }
 .patient-note p { margin: 0; }
 .patient-note strong { font-weight: 600; }
 .text-link { display: inline-flex; gap: 12px; align-items: center; font-size: 1rem; min-height: 44px; }
-.contact { grid-area: contact; border-top: 1px solid var(--line); padding-block: 44px 52px; display: grid; grid-template-columns: repeat(3, 1fr); gap: 64px; }
+.contact { grid-area: contact; border-top: 1px solid var(--line); padding-block: 44px 52px; display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr) max-content; gap: 64px; }
 .contact .eyebrow { margin-bottom: 16px; }
 .call { display: inline-flex; align-items: center; gap: 10px; min-height: 44px; font-family: var(--serif); font-size: clamp(1.75rem, 3vw, 2.5rem); letter-spacing: -.025em; line-height: 1.4; }
 .call .icon, .call-verb { position: absolute; width: 1px; height: 1px; margin: -1px; overflow: hidden; clip-path: inset(50%); white-space: nowrap; }
@@ -124,11 +124,18 @@ h1 em, h2 em { color: var(--plum); }
 .street-number { font-family: var(--serif); color: var(--plum); font-size: 5rem; line-height: 1; letter-spacing: -.06em; border-right: 1px solid var(--line); padding-right: 25px; }
 address { font-style: normal; }
 address span { display: block; }
-.address-row + .text-link { margin-top: 20px; }
+.address-row + .text-link { display: inline-block; margin-top: 20px; padding-block: 10px; }
+.address-row + .text-link .icon { margin-left: 12px; vertical-align: -4px; }
+.contact-address { container-type: inline-size; }
+@container (width < 312px) {
+  .address-row { flex-direction: column; align-items: flex-start; }
+  .street-number { border-right: 0; padding-right: 0; }
+}
 .contact-address, .contact-hours { padding-left: 44px; border-left: 1px solid var(--line); }
-.hours { max-width: 300px; margin: 0; font-size: 1rem; }
-.hours div { display: flex; justify-content: space-between; gap: 16px; padding-block: 3px; }
-.hours dd { margin: 0; }
+.hours { display: grid; grid-template-columns: auto auto; justify-content: space-between; column-gap: 16px; max-width: 300px; margin: 0; font-size: 1rem; }
+.hours div { display: contents; }
+.hours dt, .hours dd { padding-block: 3px; }
+.hours dd { margin: 0; white-space: nowrap; }
 .hours .closed { color: var(--muted); }
 .phone-large { display: inline-block; min-height: 44px; font-family: var(--serif); font-size: clamp(1.75rem, 3vw, 2.5rem); letter-spacing: -.025em; line-height: 1.4; margin-bottom: 14px; }
 .footer { background: var(--plum); color: var(--on-plum-muted); }
@@ -141,7 +148,7 @@ address span { display: block; }
 .team-heading h1 { font-size: clamp(2.125rem, 5vw, 4.375rem); }
 .team-list { border-top: 1px solid var(--line); }
 .team-member { display: flex; align-items: center; justify-content: space-between; gap: 24px; border-bottom: 1px solid var(--line); padding-block: 22px; }
-.team-member h2 { font-size: 2.875rem; letter-spacing: -.035em; margin: 0; }
+.team-member h2 { font-size: clamp(1.75rem, 3vw, 2.25rem); letter-spacing: -.035em; margin: 0; }
 .team-member p { color: var(--muted); margin: 0; }
 .team-contact { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 22px; padding-block: 32px 44px; }
 .error-main { padding-block: 48px; }
@@ -158,6 +165,10 @@ address span { display: block; }
   .home { column-gap: 32px; }
   .contact { gap: 32px; }
   .contact-address, .contact-hours { padding-left: 30px; }
+}
+@media (max-width: 900px) {
+  .contact { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .contact-hours { grid-column: 1 / -1; padding: 28px 0 0; border-left: 0; border-top: 1px solid var(--line); }
 }
 @media (max-width: 760px) {
   .wrap { width: calc(100% - 40px); }
@@ -189,7 +200,6 @@ address span { display: block; }
   .footer a { margin-left: auto; }
   .team-heading { padding-block: 28px 32px; }
   .team-member { display: block; }
-  .team-member h2 { font-size: 2.4375rem; }
   .team-member p { margin-top: 4px; }
   .team-contact { padding-bottom: 32px; }
   .error-main { padding-block: 32px; }
