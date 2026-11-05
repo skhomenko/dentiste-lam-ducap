@@ -119,7 +119,7 @@ h1 em, h2 em { color: var(--plum); }
 .call .icon, .call-verb { position: absolute; width: 1px; height: 1px; margin: -1px; overflow: hidden; clip-path: inset(50%); white-space: nowrap; }
 .contact-note { max-width: 400px; margin: 12px 0 0; color: var(--muted); }
 .contact-email { margin: 4px 0 0; color: var(--muted); }
-.contact-email a { display: inline-flex; align-items: center; min-height: 44px; overflow-wrap: anywhere; }
+.contact-email a { display: flex; align-items: center; width: fit-content; min-height: 44px; overflow-wrap: anywhere; }
 .address-row { display: flex; flex-wrap: wrap; align-items: center; gap: 12px 24px; }
 .street-number { font-family: var(--serif); color: var(--plum); font-size: 5rem; line-height: 1; letter-spacing: -.06em; border-right: 1px solid var(--line); padding-right: 25px; }
 address { font-style: normal; }
