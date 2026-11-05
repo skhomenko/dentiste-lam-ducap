@@ -33,7 +33,7 @@ Keep changes to facts, links, and structured data consistent across all four lan
 
 The site is published to GitHub Pages at https://dentistelam.ca/ by `.github/workflows/pages.yml` on every push to `main`. The workflow publishes only `public/`, never the repository root. The custom domain is set in the repository's Pages settings (a `CNAME` file is ignored by workflow deployments), and the domain's DNS points to GitHub Pages. The private `.local/` folder is excluded from Git and must stay outside published output.
 
-Every page declares its absolute canonical URL and its French and English alternates; `sitemap.xml` and `robots.txt` use the same URLs. Keep them in step when adding or renaming a page. Still open: confirm owner approval of the text and logo, supply the actual office email (missing details are intentionally omitted), add sharing metadata, and review security headers (GitHub Pages cannot set custom headers).
+Every page declares its absolute canonical URL and its French and English alternates; `sitemap.xml` and `robots.txt` use the same URLs. Keep them in step when adding or renaming a page. Still open: confirm owner approval of the text and logo, add sharing metadata, and review security headers (GitHub Pages cannot set custom headers).
 
 ## Typography and error pages
 
